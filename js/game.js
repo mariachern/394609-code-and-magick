@@ -34,7 +34,6 @@ window.Game = (function () {
    * @type {number}
    */
   var WIDTH = 700;
-  var WIDTH = 700;
 
   /**
    * ID уровней.
