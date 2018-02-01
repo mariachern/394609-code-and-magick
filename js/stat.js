@@ -20,9 +20,9 @@ var renderCloud = function (ctx, x, y, color) {
 var getMaxElement = function (arr) {
   var maxElement = arr[0];
 
-  for (var i = 0; i < arr.length; i ++) {
+  for (var i = 0; i < arr.length; i++) {
     if (arr[i] > maxElement) {
-    maxElement = arr[i];
+      maxElement = arr[i];
     }
   }
   return maxElement;
@@ -52,8 +52,8 @@ window.renderStatistics = function (ctx, players, times) {
     } else {
       var getRandRGBA = function () {
         var randOpacity = (Math.ceil(Math.random() * 10)) / 10;
-        return 'rgba(' + '0, ' + '0, ' + '255, ' + randOpacity + ')'
-      }
+        return 'rgba(' + '0, ' + '0, ' + '255, ' + randOpacity + ')';
+      };
       ctx.fillStyle = getRandRGBA();
     }
     ctx.fillRect(BAR_X + (BAR_WIDTH + BAR_GAP) * i, top, BAR_WIDTH, CLOUD_HEIGHT - top - LINE_HEIGHT);
