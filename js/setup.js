@@ -17,23 +17,33 @@ var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var coatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 
+var wizards = [];
+
+var wizardsCount = 4;
+
+var getRandomElement = function (array) {
+  var randElement = array[Math.floor(Math.random() * array.length)];
+  return randElement;
+};
+
 var generateWizardName = function () {
-  var wizardFirstName = wizardFirstNames[Math.floor(Math.random() * wizardFirstNames.length)];
-  var wizardLastName = wizardLastNames[Math.floor(Math.random() * wizardLastNames.length)];
+  var wizardFirstName = getRandomElement(wizardFirstNames);
+  var wizardLastName = getRandomElement(wizardLastNames);
   var wizardName = wizardFirstName + ' ' + wizardLastName;
   return wizardName;
 };
 
-var wizards = [];
-wizards.length = 4;
+for (var i = 0; i < wizardsCount; i++) {
+  var wizard = {
+    name: generateWizardName(),
+    eyesColor: getRandomElement(eyesColor),
+    coatColor: getRandomElement(coatColor)
+  };
+  wizards.push(wizard);
+}
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
-  wizard = {
-    name: generateWizardName(),
-    eyesColor: eyesColor[Math.floor(Math.random() * eyesColor.length)],
-    coatColor: coatColor[Math.floor(Math.random() * coatColor.length)]
-  };
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
   wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
@@ -42,8 +52,8 @@ var renderWizard = function (wizard) {
 
 var fragment = document.createDocumentFragment();
 
-for (var i = 0; i <= wizards.length - 1; i++) {
-  fragment.appendChild(renderWizard(wizard));
+for (var j = 0; j < wizardsCount; j++) {
+  fragment.appendChild(renderWizard(wizards[j]));
 }
 
 similarListElement.appendChild(fragment);
