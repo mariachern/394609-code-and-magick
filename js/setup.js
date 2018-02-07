@@ -34,12 +34,12 @@ var generateWizardName = function () {
 };
 
 for (var i = 0; i < wizardsCount; i++) {
-  var wizard = {
+  var randomWizard = {
     name: generateWizardName(),
     eyesColor: getRandomElement(eyesColor),
     coatColor: getRandomElement(coatColor)
   };
-  wizards.push(wizard);
+  wizards.push(randomWizard);
 }
 
 var renderWizard = function (wizard) {
