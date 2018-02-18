@@ -25,10 +25,13 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template').c
 var userWizard = document.querySelector('.setup-wizard');
 
 var userWizardCoat = userWizard.querySelector('.wizard-coat');
+var wizardCoatInput = document.getElementsByName('coat-color')[0];
 
 var userWizardEyes = userWizard.querySelector('.wizard-eyes');
+var wizardEyesInput = document.getElementsByName('eyes-color')[0];
 
 var userWizardFireball = document.querySelector('.setup-fireball-wrap');
+var wizardFireballInput = document.getElementsByName('fireball-color')[0];
 
 var userDialog = document.querySelector('.setup');
 
@@ -123,12 +126,15 @@ var changeColor = function (array) {
 
 userWizardCoat.addEventListener('click', function () {
   userWizardCoat.style.fill = changeColor(COAT_COLORS);
+  wizardCoatInput.value = userWizardCoat.style.fill;
 });
 
 userWizardEyes.addEventListener('click', function () {
   userWizardEyes.style.fill = changeColor(EYES_COLORS);
+  wizardEyesInput.value = userWizardEyes.style.fill;
 });
 
 userWizardFireball.addEventListener('click', function () {
-  userWizardFireball.style.background = changeColor(FIREBALLS);
+  wizardFireballInput.value = changeColor(FIREBALLS);
+  userWizardFireball.style.background = wizardFireballInput.value;
 });
