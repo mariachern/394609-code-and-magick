@@ -69,7 +69,7 @@ var openPopup = function () {
 
 var closePopup = function () {
   userDialog.classList.add('hidden');
-  document.removeEventListener('keydown', onPopupEscPress)
+  document.removeEventListener('keydown', onPopupEscPress);
 };
 
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
