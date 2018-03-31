@@ -7,13 +7,13 @@
   };
 
   var isEnterEvent = function (evt, action) {
-    if(evt.keyCode === Keycode.ENTER) {
+    if (evt.keyCode === Keycode.ENTER) {
       action();
     }
   };
 
   var isEscEvent = function (evt, action) {
-    if(evt.keyCode === Keycode.ESC) {
+    if (evt.keyCode === Keycode.ESC) {
       action();
     }
   };

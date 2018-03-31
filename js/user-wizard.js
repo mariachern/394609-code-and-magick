@@ -41,8 +41,8 @@
     userWizardFireball.style.background = wizardFireballInput.value;
   });
 
-  window.Wizard = {
+  window.userWizard = {
     coat: Wizard.COAT,
     eyes: Wizard.EYES
-  }
+  };
 })();
