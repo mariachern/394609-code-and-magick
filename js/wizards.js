@@ -21,6 +21,8 @@
   var render = function (wizards) {
     var wizardsNumber = wizards.length > 4 ? 4 : wizards.length;
 
+    similarListElement.innerHTML = '';
+
     for (var i = 0; i < wizardsNumber; i++) {
       fragment.appendChild(create(wizards[i]));
     }
