@@ -1,6 +1,17 @@
 'use strict';
 
 (function () {
+  var DEBOUNCE_INTERVAL = 500; // ms
+
+  var lastTimeout;
+
+  var debounce = function (fun) {
+    if (lastTimeout) {
+      window.clearTimeout(lastTimeout);
+    }
+    lastTimeout = window.setTimeout(fun, DEBOUNCE_INTERVAL);
+  };
+
   var showError = function (errorMessage) {
     var node = document.createElement('div');
     var nodeClose = document.createElement('button');
@@ -21,6 +32,7 @@
   };
 
   window.utils = {
-    error: showError
+    error: showError,
+    debounce: debounce
   };
 })();
